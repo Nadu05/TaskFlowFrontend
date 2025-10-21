@@ -6,9 +6,9 @@ import TaskForm from "@/components/Dashboard/TaskForm";
 
 type Tasks = {
     id: number;
-    title: string;
-    description: string;
-    date: string;
+    taskTitle: string;
+    taskDescription: string;
+    dueDate: string;
     status: string;
     allocatedTime?: string;
 }
@@ -84,8 +84,10 @@ export default function DashboardSection({ tasks }: { tasks: Tasks[] }) {
                 ) : (
                     tasks.map(task => (
                         <TaskCard key={task.id} task={task} />
+
                     ))
                 )}
+
             </div>
         </div>
     );

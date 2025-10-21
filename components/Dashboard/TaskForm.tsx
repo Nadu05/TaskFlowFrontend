@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 export enum Priority {
     Low = "Low",
@@ -53,7 +53,7 @@ export default function TaskForm({
                     onChange={(e) => setTaskTitle(e.target.value)}
                     placeholder="Enter task title"
                     className="input"
-                    required
+
                 />
             </div>
 
@@ -114,3 +114,28 @@ export default function TaskForm({
         </form>
     );
 }
+//
+// <div className="tasks-list" id="opponent-tasks">
+//     <!-- Example Task Card -->
+//     <div className="task-card">
+//         <div className="task-header">
+//             <h3 className="task-name">Fix login API bug</h3>
+//             <div className="task-actions">
+//                 <button className="edit-btn">✏️</button>
+//                 <button className="delete-btn">🗑️</button>
+//             </div>
+//
+//         </div>
+//         <p className="task-desc">Resolve issue causing invalid token errors.</p>
+//         <div className="task-footer">
+//             <div className="task-datetime">
+//                 <span className="material-symbols-outlined">calendar_today</span>
+//                 <span>Oct 25, 2025 - 03:30 PM</span>
+//             </div>
+//             <select className="status-select">
+//                 <option>Not Started</option>
+//                 <option>In Progress</option>
+//                 <option>Completed</option>
+//             </select>
+//         </div>
+//     </div>

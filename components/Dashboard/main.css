@@ -1,0 +1,140 @@
+
+:root {
+    --section-dark: #1f2937;
+    --border-dark: #374151;
+    --neon-blue: #38bdf8;
+    --text-light: #f3f4f6;
+    --text-muted: #9ca3af;
+    --soft-purple: #a78bfa;
+}
+
+
+/* --- Card Styles --- */
+.taskCard {
+    background-color: var(--section-dark);
+    border: 1px solid var(--border-dark);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: sans-serif;
+}
+
+.taskCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+/* --- Card Sections --- */
+.taskHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.taskName {
+    font-size: 1.2rem; /* Adjusted for better balance */
+    font-weight: 600;
+    color: var(--neon-blue);
+    text-shadow: 0 0 6px rgba(56, 189, 248, 0.5); /* Added subtle glow */
+}
+
+.taskDesc {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.taskFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.taskDatetime {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Increased gap */
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* --- Interactive Elements --- */
+.taskActions button {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    margin-left: 8px;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+    padding: 4px;
+}
+
+.taskActions .editBtn:hover {
+    color: var(--neon-blue);
+}
+
+.taskActions .deleteBtn:hover {
+    color: #ef4444; /* Red for delete */
+}
+
+.statusSelect {
+    background-color: var(--border-dark);
+    border: none;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+.statusSelect:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--soft-purple); /* Better focus ring */
+}
+
+
+/* --- Task Status Variants --- */
+.taskInProgress {
+    border-left: 4px solid var(--neon-blue); /* Use border instead of full background */
+}
+
+.taskCompleted {
+    opacity: 0.6;
+    background-color: #111827; /* Darker background */
+    box-shadow: none;
+}
+
+.taskCompleted .taskName,
+.taskCompleted .taskDesc {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+
+/* --- Popover Styles for Edit Form --- */
+.popoverOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popoverContent {
+    background-color: var(--section-dark);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-dark);
+    min-width: 300px;
+    max-width: 500px;
+}

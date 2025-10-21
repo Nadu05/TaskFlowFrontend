@@ -15,21 +15,22 @@ type Task = {
 
 export default function Main() {
     const [tasks, setTasks] = useState<Task[]>([]);
-  //  const [loading, setLoading] = useState(true);
-    //const [error, setError] = useState<string | null>(null);
+   const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchTasks = async () => {
             try {
-      //          setLoading(true);
+               setLoading(true);
                 const response = await getTasks();
                 setTasks(response.data);
-        //        setError(null);
+               setError(null);
             } catch (err) {
                 console.error('Error fetching tasks:', err);
-             //   setError('Failed to load tasks');
+               setError('Failed to load tasks');
             } finally {
-               // setLoading(false);
+               setLoading(false);
+               console.log(tasks);
             }
         };
 
@@ -40,16 +41,16 @@ export default function Main() {
         <div className="min-h-screen">
             <main>
                 <section>
-                    {/* <!--  {loading ? (
+                     {loading ? (
                         <div className="loading">Loading tasks...</div>
                     ) : error ? (
                         <div className="error">{error}</div>
                     ) : (
                         <DashboardSection tasks={tasks} />
-                    )} -->  */}
+                    )}
 
 
-                    <DashboardSection tasks={tasks} />
+                    {/*<DashboardSection tasks={tasks} />*/}
                 </section>
 
                 <section>
